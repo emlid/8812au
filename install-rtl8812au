@@ -24,6 +24,10 @@ $RUNASUSER bash << EOF
     fi
 EOF
 
+# Set udev rule for tx power
+echo -e "\n Adding udev rule for 8812au device"
+cp rtl8812-txpower.rules /etc/udev/rules.d/rtl8812-txpower.rules
+
 echo -e "\n Installing the module..."
 make install
 
